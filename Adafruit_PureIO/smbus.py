@@ -160,7 +160,7 @@ class SMBus:
 
     def _select_device(self, addr):
         """Set the address of the device to communicate with on the I2C bus."""
-        ioctl(self._device.fileno(), I2C_SLAVE, addr & 0x7F)
+        ioctl(self._device.fileno(), I2C_SLAVE_FORCE, addr & 0x7F)
 
     def read_byte(self, addr):
         """Read a single byte from the specified device."""
